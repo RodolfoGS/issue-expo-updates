@@ -1,0 +1,12 @@
+{
+  "name": "issue-expo-updates",
+  "displayName": "issue-expo-updates",
+  "expo": {
+    "name": "issue-expo-updates",
+    "slug": "issue-expo-updates",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
