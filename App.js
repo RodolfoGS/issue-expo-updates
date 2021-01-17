@@ -1,12 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import * as SplashScreen from 'expo-splash-screen';
+import * as Updates from 'expo-updates';
+
+SplashScreen.hideAsync().catch(() => {});
 
 export default function App() {
+
+  handleForceUpdate = async () => {
+    await Updates.fetchUpdateAsync();
+    await Updates.reloadAsync();
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text>Release: {Updates.manifest.revisionId}</Text>
+      <Button onPress={handleForceUpdate} title="Force Update" />
     </View>
   );
 }
